@@ -1,0 +1,129 @@
+/* Css Flexbox: ABC Channel */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex_container {
+  background-color: blanchedalmond;
+  height: 800px;
+
+  /* ata use kora mane flex suru kora , ata dile pashapashi hoye jabe */
+  display: flex;
+
+  /* flex-direction প্রপার্টি Flexbox container-এ আইটেমগুলোর মূল দিক (main axis: x ) নির্ধারণ করে।
+ ডিফল্টভাবে, Flex items এক লাইনে (row) থাকে, কিন্তু flex-direction: column; সেট করলে, আইটেমগুলো উপর থেকে নিচে (top to bottom) সাজানো হয়। akta kotha mone rakte hobe :  flex direction change korle , justify-content tokon dane bame (mane - x axis ) kaj kore na , tokon Y axis mane (upore niche) kaj kore , jeta (main axis) mane  x axis thakbe seta (cross axis) mane  Y axis hoye jabe , jeta Y axis(mane cross axis) thakbe seta (main axis) mane x axis hoye jabe, amara jodi flex direction at off kori tokon dekbo x axis ae kaj kortese, thik temni vabe align- items oo ulta kaj korbe(mane Y aixs na kore x axis korbe) */
+  /* flex-direction: column; */
+
+  /* justify-content x axix (mane main axis borabor kaj kore) */
+
+  /* ata diye bam pashe anee  */
+  /* justify-content: flex-start; */
+
+  /* ata diye dan pashe anee  */
+  /* justify-content: flex-end; */
+
+  /* ata diye center ae anae, dane bame gap raikha , mane x axis borabor  */
+  justify-content: center;
+
+  /* প্রতিটি আইটেমের চারপাশে সমান পরিমাণ মার্জিন থাকে, অর্থাৎ বাম ও ডান পাশে অর্ধেক গ্যাপ থাকে যতটা দুই আইটেমের মধ্যে থাকে।
+  ফলাফল: পাশে থাকা আইটেমগুলোর বাহিরের মার্জিন কম থাকে এবং মাঝের আইটেমগুলোর মধ্যে বেশি ফাঁকা থাকে। */
+  /* justify-content: space-around; */
+
+  /* সব আইটেম এবং তাদের চারপাশের গ্যাপ সমান হয়।
+   ফলে সব আইটেমের মাঝে এবং পাশে একই পরিমাণ ফাঁকা থাকে। */
+  /* justify-content: space-evenly; */
+
+  /* ata dile item gula dane bame jabe r majer jayga gula bhag kore niye nibe  */
+  /* justify-content: space-between; */
+
+  /* ata diye center ae ane, ata kaj kore Y axis borabor (mane upore niche) */
+  align-items: center;
+
+  /* ata diye upore niye jay  */
+  /* align-items: flex-start; */
+
+  /* ata dile niche chole asbe  */
+  /* align-items: flex-end; */
+
+  /* ata by default no wrap tahake, যখন flex-wrap: wrap; সেট করা হয়, তখন আইটেমগুলো প্রয়োজন হলে নতুন লাইনে চলে যায়, যাতে তারা সংকুচিত না হয়। ata jokon dekbo tokon html file theke baki item gula comment off kore nibo  */
+  flex-wrap: wrap;
+
+  /* ata dile ulta kaj korbe , mane item gula niche theke suru hoye upore dike jabe  */
+  /* flex-wrap: wrap-reverse; */
+}
+
+.item {
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: aqua;
+}
+
+.item:nth-child(1) {
+  background-color: red;
+
+  /* order প্রপার্টি Flexbox container-এর মধ্যে Flex items-এর অবস্থান (position) নিয়ন্ত্রণ করে।
+👉 ডিফল্টভাবে সব Flex items-এর order মান থাকে 0।
+👉 order: 2; মানে হলো এই আইটেমটি অন্যান্য order: 0; আইটেমের পরে যাবে।
+
+📌 কিভাবে কাজ করে?
+✔️ Flex items-এর order যত বেশি হবে, সেটি তত পরে অবস্থান নেবে।
+✔️ order মান কম হলে, আইটেমটি আগে চলে আসবে।
+✔️ যদি সব আইটেমের order একই থাকে, তাহলে HTML-এর দেওয়া ডিফল্ট অর্ডারেই থাকবে। */
+  /* order: 2; */
+
+  /* Flex-basis প্রপার্টি Flex items-এর প্রাথমিক আকার (initial size) নির্ধারণ করে, যা মূলত আইটেমের প্রস্থ (width) বা উচ্চতা (height) হবে, যখন Flexbox layout তৈরি হয়।
+👉 flex-basis: 50%; মানে হলো, আইটেমের প্রাথমিক আকার হবে কনটেইনারের ৫০%। */
+
+  /* flex-basis: 50%; */
+
+  /* flex: 1 0 50%; কী?
+flex একটি shorthand প্রপার্টি যা তিনটি মান গ্রহণ করে:
+
+flex-grow: আইটেমটির গ্রো করার ক্ষমতা।
+flex-shrink: আইটেমটির সংকুচিত হওয়ার ক্ষমতা।
+flex-basis: আইটেমটির প্রাথমিক আকার।
+এখানে flex: 1 0 50%; মানে:
+
+flex-grow: 1;: আইটেমটি বাকি জায়গা নিবে, যদি অন্যান্য আইটেমগুলোর জন্য অতিরিক্ত জায়গা থাকে।
+flex-shrink: 0;: আইটেমটি সংকুচিত হবে না, যদি কনটেইনারের জায়গা কমে যায়।
+flex-basis: 50%;: আইটেমের প্রাথমিক আকার হবে কনটেইনারের ৫০%। */
+
+  flex: 1 0 50%;
+}
+
+.item:nth-child(2) {
+  background-color: black;
+
+  /* flex-grow Flexbox container-এর মধ্যে Flex items-এর গ্রো করার ক্ষমতা নির্ধারণ করে।
+যদি একাধিক Flex item থাকে, তাহলে flex-grow সেট করা আইটেমটি অন্যান্য আইটেমের তুলনায় বেশি জায়গা নেবে।
+flex-grow: 2; মানে হলো, এই আইটেমটি অন্য Flex items-এর তুলনায় দ্বিগুণ জায়গা দখল করবে।, jodi abar sob gulaa tei flex-grow:1 value use kore tahole soman jayga nibe */
+  /* flex-grow: 2; */
+
+  /* order: 3; */
+
+  /* flex-basis: 30%; */
+
+  flex: 1 0 25%;
+}
+.item:nth-child(3) {
+  background-color: blue;
+
+  /* flex-shrink Flexbox container-এর মধ্যে Flex items-এর সংকুচিত (shrink) হওয়ার ক্ষমতা নির্ধারণ করে।
+flex-shrink: 4; মানে হলো, এই আইটেমটি অন্য Flex items-এর তুলনায় ৪ গুণ বেশি সংকুচিত হবে যদি প্রয়োজন হয়। */
+  /* flex-shrink: 6; */
+
+  /* order: 1; */
+
+  /* flex-basis: 40%; */
+
+  flex: 1 0 25%;
+}
